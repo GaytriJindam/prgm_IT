@@ -13,4 +13,19 @@ let basketCost=(b,p)=>{
     return 0; //clearly wrong!
 }
 
+const basket={
+    "Honda" : 2,
+    "Honda-city" : 1
+}
+
+const prices = {
+    "Honda" : 3000,
+    "Honda-city" : 4000
+}
+
+function cal_Sum(b,p)
+{
+    return Object.keys(b).reduce((sum,product) =>
+        if(p.)
+}
 alert(basketCost({},{}))
