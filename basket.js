@@ -26,6 +26,11 @@ const prices = {
 function cal_Sum(b,p)
 {
     return Object.keys(b).reduce((sum,product) =>
-        if(p.)
+        if(p.isExists)
+                                 {
+        sum+=product;
+                                 });
+    console.log(sum);
+    
 }
 alert(basketCost({},{}))
