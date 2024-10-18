@@ -23,14 +23,20 @@ const prices = {
     "Honda-city" : 4000
 }
 
-function cal_Sum(b,p)
+
+function TotalPrice(basket,prices)
 {
-    return Object.keys(b).reduce((sum,product) =>
-        if(p.isExists)
-                                 {
-        sum+=product;
-                                 });
-    console.log(sum);
+    sum = 0;
+    for(let product in basket)
+    {
+        if(price[product]!=undefined)
+        {
+            sum+=basket[product]*price[product];
+        }
+    }
     
+    alert("Basket Sum = "+sum);
+    return sum;
 }
-alert(basketCost({},{}))
+
+alert(TotalPrice({'Paper':3,'Pen':2,'Book':4},{'Paper':2.3,'Pen':.90}))
