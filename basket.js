@@ -29,9 +29,9 @@ function TotalPrice(basket,prices)
     sum = 0;
     for(let product in basket)
     {
-        if(price[product]!=undefined)
+        if(prices[product]!=undefined)
         {
-            sum+=basket[product]*price[product];
+            sum+=basket[product]*prices[product];
         }
     }
     
@@ -39,4 +39,4 @@ function TotalPrice(basket,prices)
     return sum;
 }
 
-alert(TotalPrice({'Paper':3,'Pen':2,'Book':4},{'Paper':2.3,'Pen':.90}))
+alert(TotalPrice({'Honda':2,'Honda-city':1},{'Honda':6000,'Honda-city':4000}))
