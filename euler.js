@@ -1,53 +1,86 @@
-/*If we list all the natural numbers below 10 that are multiples
-of 3 or 5, we get 3, 5, 6 and 9.
-The sum of these multiples is 23.
-
-1. Find the sum of all the multiples of 3 or 5 below 1000.
-
-2. Create a function to find the sum of all the multiples of a or b below n.
-(a,b,n) are function parameters
-
-3. Allow the user to enter the parameters via text box(es)
-and alert them to the output
-
-
-Demonstrate some DOM manipulation in the exercise.
-for example changing the value of a result div, hiding inputs once the button is clicked ...
-
-Arrays:
-a.
-Create a function which takes parameters a,b,l
-l is a list of integers
-find the sum of all the multiples of a or b in l
-
-b.
-Create a function which takes parameters a,l
-a is a list of two integers
-l is a list of integers
-find the sum of all the multiples of elements of a in l
-
-c.
-Create a function which takes parameters a,l
-a is a list of integers
-l is a list of integers
-find the sum of all the multiples of elements of a in l
-*/
-alert("Loaded Euler JS");
-let a=3;
-let b=5;
-let n=1000;
-
-//Create a function to find the sum of all the multiples of a or b below n.
-//(a,b,n) are function parameters
-
-let f1=(a,b,n) => {
-    let total=0
-    for(let i=0; i<n; i++){
-        if (i%a==0 || i%b==0){
-            total+=i;
+function sum(a,b,n)
+    {
+        s=0;
+        for(i=1;i<n;i++)
+        {
+            if(i%a==0 || i%b==0)
+                s+=i;
         }
+        alert("Sum = "+s);
+        document.getElementById("result").innerHTML=s;
     }
-    return total;
+
+function GetValues()
+{
+    num1 = document.getElementById("num1").value;
+    num2 = document.getElementById("num2").value;
+    limit = document.getElementById("limit").value;
+    document.getElementById("num1").style.display="none";
+    document.getElementById("num2").style.display="none";
+    document.getElementById("limit").style.display="none";
+    document.getElementById("sum").style.display="none";
+    document.getElementById("label1").style.display="none";
+    document.getElementById("label2").style.display="none";
+    document.getElementById("label3").style.display="none";
+    sum(num1,num2,limit);
+    
 }
 
-alert(f1(3,5,1000));
+
+
+function Show()
+{
+    document.getElementById("num1").style.display="block";
+    document.getElementById("num2").style.display="block";
+    document.getElementById("limit").style.display="block";
+    document.getElementById("sum").style.display="block";
+    document.getElementById("label1").style.display="block";
+    document.getElementById("label2").style.display="block";
+    document.getElementById("label3").style.display="block";
+   
+   
+    l=[10,12,14,156,28];
+    m=3;
+    v=5;
+    sum1(l,m,v);
+
+    k=[6,3];
+    j=[2,5,6,12,15];
+    sum2(k,j)
+}
+
+function slice()
+{
+    text = document.getElementById("slice1").value;
+    start = document.getElementById("start").value;
+    end = document.getElementById("end").value;
+    result = text.slice(start,end);
+    alert("Result = "+result);
+}
+
+
+
+function sum1(l,a,b)
+{
+    s=0;
+    for(i=0;i<l.length;i++)
+    {
+        if(l[i]%a==0 || l[i]%b==0)
+            s+=l[i];
+    }
+    alert("Sum = "+s);
+}
+
+function sum2(k,j)
+{
+    s=0;
+    for(i=0;i<k.length;i++)
+    {
+        for(h=0;h<j.length;h++)
+        {
+            if(j[h]%k[i]==0 || j[h]%k[i]==0)
+                s+=j[h];
+        }
+    }
+    alert("Sum = "+s);
+}
